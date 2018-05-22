@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{64C9DBA8-725C-4A1B-AA6D-0ECE69079277}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Delphi\DelphiMazes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C++\CppMazes.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DelphiMazes">
+        <MSBuild Projects="Delphi\DelphiMazes.dproj"/>
+    </Target>
+    <Target Name="DelphiMazes:Clean">
+        <MSBuild Projects="Delphi\DelphiMazes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiMazes:Make">
+        <MSBuild Projects="Delphi\DelphiMazes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CppMazes">
+        <MSBuild Projects="C++\CppMazes.cbproj"/>
+    </Target>
+    <Target Name="CppMazes:Clean">
+        <MSBuild Projects="C++\CppMazes.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CppMazes:Make">
+        <MSBuild Projects="C++\CppMazes.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DelphiMazes;CppMazes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DelphiMazes:Clean;CppMazes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DelphiMazes:Make;CppMazes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

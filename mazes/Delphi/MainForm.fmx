@@ -1,0 +1,160 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Mazes!'
+  ClientHeight = 480
+  ClientWidth = 830
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object ToolBar: TToolBar
+    Align = Bottom
+    Position.Y = 440.000000000000000000
+    Size.Width = 830.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnNew: TSpeedButton
+      Align = Left
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'pagecurltoolbutton'
+      Text = 'New'
+      OnClick = btnNewClick
+    end
+    object cmbDistance: TComboBox
+      Align = Right
+      Items.Strings = (
+        'None'
+        'Candidates'
+        'Numeric'
+        'Colour'
+        'Solution')
+      ItemIndex = 0
+      Margins.Top = 7.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 7.000000000000000000
+      Position.X = 388.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = cmbDistanceChange
+    end
+    object btnPlayStepped: TSpeedButton
+      Align = Right
+      Position.X = 750.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'forwardtoolbutton'
+      Text = 'btnPlayStepped'
+      OnClick = btnPlaySteppedClick
+    end
+    object btnPlay: TSpeedButton
+      Align = Right
+      Position.X = 710.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'playtoolbutton'
+      Text = 'btnPlay'
+      OnClick = btnPlayClick
+    end
+    object edtCellSize: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Left
+      TabOrder = 5
+      Text = '50'
+      Position.X = 121.000000000000000000
+      Position.Y = 7.000000000000000000
+      Margins.Top = 7.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 7.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      OnKeyUp = edtCellSizeKeyUp
+    end
+    object btnStop: TSpeedButton
+      Align = Right
+      Enabled = False
+      Position.X = 790.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'stoptoolbutton'
+      Text = 'btnStop'
+      OnClick = btnStopClick
+    end
+    object cmbAlgorithm: TComboBox
+      Align = Right
+      Items.Strings = (
+        'Binary Tree'
+        'Aldous-Broder'
+        'Recursive Backtracker')
+      ItemIndex = 0
+      Margins.Top = 7.000000000000000000
+      Margins.Bottom = 7.000000000000000000
+      Position.X = 560.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Align = Right
+      AutoSize = True
+      Margins.Right = 4.000000000000000000
+      Position.X = 328.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Distance:'
+      TabOrder = 9
+    end
+    object Label2: TLabel
+      Align = Right
+      AutoSize = True
+      Margins.Right = 4.000000000000000000
+      Position.X = 492.000000000000000000
+      Size.Width = 64.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Algorithm:'
+      TabOrder = 7
+    end
+    object Label3: TLabel
+      Align = Left
+      AutoSize = True
+      Margins.Right = 4.000000000000000000
+      Position.X = 40.000000000000000000
+      Size.Width = 77.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Cell size (px):'
+      TabOrder = 8
+    end
+  end
+  object ImageViewer: TImageViewer
+    Align = Client
+    Margins.Left = -1.000000000000000000
+    Margins.Top = -1.000000000000000000
+    Margins.Right = -1.000000000000000000
+    Margins.Bottom = -1.000000000000000000
+    Size.Width = 832.000000000000000000
+    Size.Height = 442.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 828.000000000000000000
+    Viewport.Height = 438.000000000000000000
+  end
+end
